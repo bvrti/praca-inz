@@ -1,0 +1,34 @@
+<!DOCTYPE='html'>
+<html lang = 'pl'>
+
+<head>
+    <title>{% block title %}App{% endblock %}</title>
+    <meta charset = 'utf-8'>
+    <meta name = 'viewport' content = 'width=device-width, initial-scale=1.0'>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'app/css/style.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'app/img/favicon.png' %}">
+</head>
+
+<body>
+    <header>
+        <div class = 'logoBox'>
+            <img src = {% static 'app/img/logo.png' %} class = 'logo'>
+        </div>
+        <div class = 'headerContent'>
+            <h1>Zgłoś problem z maszyną</h1>
+        </div>
+    </header>
+    <nav class = 'nav'>
+        <ul class = 'navUl'>
+            <li class = 'navLi'><a href = '/'>Home</a></li>
+            <li class = 'navLi'><a href = '/about'>Cos tam</a></li>
+            <li class = 'navLi'><a href = '/contact'>Kontakt</a></li>
+            <li class = 'navLi'><a href = '/login'>Zaloguj się</a></li>
+        </ul>
+    </nav>
+    <section>
+        {% block content %} XD
+        {% endblock %}
+    </section>
+</body>
