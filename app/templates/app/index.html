@@ -24,7 +24,11 @@
             <li class = 'navLi'><a href = '/'>Home</a></li>
             <li class = 'navLi'><a href = '/about'>Cos tam</a></li>
             <li class = 'navLi'><a href = '/contact'>Kontakt</a></li>
-            <li class = 'navLi'><a href = '/login'>Zaloguj się</a></li>
+            {% if user.is_authenticated %}
+                <li class = 'navLi'><a href = '/logout'>Wyloguj</a></li>
+            {% else %}
+                <li class = 'navLi'><a href = '/login'>Zaloguj</a></li>
+            {% endif %}
         </ul>
     </nav>
     <section>
