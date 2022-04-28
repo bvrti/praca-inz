@@ -21,10 +21,12 @@
     </header>
     <nav class = 'nav'>
         <ul class = 'navUl'>
-            <li class = 'navLi'><a href = '/'>Home</a></li>
-            <li class = 'navLi'><a href = '/about'>Cos tam</a></li>
-            <li class = 'navLi'><a href = '/contact'>Kontakt</a></li>
+            <li class = 'navLi'><a href = '/'>Strona Główna</a></li>
+            <li class = 'navLi'><a href = '/report-malfunction'>Zgłoś problem</a></li>
+            <li class = 'navLi'><a href = 'http://130.171.180.99/fis/people/support'>Kontakt</a></li>
             {% if user.is_authenticated %}
+                <li class = 'navLi'><a href = '/reports'>Raporty</a></li>
+                <li class = 'navLi'><a href = '/administration'>Administracja</a></li>
                 <li class = 'navLi'><a href = '/logout'>Wyloguj</a></li>
             {% else %}
                 <li class = 'navLi'><a href = '/login'>Zaloguj</a></li>
@@ -32,7 +34,16 @@
         </ul>
     </nav>
     <section>
-        {% block content %} XD
+        {% block content %} 
+        {% if user.is_authenticated %}
+            
+            {% else %}
+            <div class = 'main-page-content'>
+                <img src = {% static 'app/img/megaphone.png' %} class = 'megaphone'/>
+                <h2>Witaj w serwisie zgłaszania problemów z maszynami!</h2>
+                <h3>Kliknij tutaj, aby zgłosić problem z maszyną.</h3>           
+            </div>
+            {% endif %}
         {% endblock %}
     </section>
 </body>
