@@ -25,6 +25,7 @@
             <li class = 'navLi'><a href = '/report-malfunction'>Zgłoś problem</a></li>
             <li class = 'navLi'><a href = 'http://130.171.180.99/fis/people/support'>Kontakt</a></li>
             {% if user.is_authenticated %}
+                <li class = 'navLi'><a href = '/reports'>Otwarte awarie</a></li>
                 <li class = 'navLi'><a href = '/reports'>Raporty</a></li>
                 <li class = 'navLi'><a href = '/administration'>Administracja</a></li>
                 <li class = 'navLi'><a href = '/logout'>Wyloguj</a></li>
@@ -41,7 +42,7 @@
             <div class = 'main-page-content'>
                 <img src = {% static 'app/img/megaphone.png' %} class = 'megaphone'/>
                 <h2>Witaj w serwisie zgłaszania problemów z maszynami!</h2>
-                <h3>Kliknij tutaj, aby zgłosić problem z maszyną.</h3>           
+                <h3><a href='/report-malfunction'>Kliknij tutaj, aby zgłosić problem z maszyną.</a></h3>           
             </div>
             {% endif %}
         {% endblock %}
