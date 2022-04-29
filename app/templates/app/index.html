@@ -28,6 +28,7 @@
                 <li class = 'navLi'><a href = '/reports'>Otwarte awarie</a></li>
                 <li class = 'navLi'><a href = '/reports'>Raporty</a></li>
                 <li class = 'navLi'><a href = '/administration'>Administracja</a></li>
+                <li class = 'navLi'><a href = '/admin'>django-admin</a></li>
                 <li class = 'navLi'><a href = '/logout'>Wyloguj</a></li>
             {% else %}
                 <li class = 'navLi'><a href = '/login'>Zaloguj</a></li>
@@ -37,7 +38,6 @@
     <section>
         {% block content %} 
         {% if user.is_authenticated %}
-            
             {% else %}
             <div class = 'main-page-content'>
                 <img src = {% static 'app/img/megaphone.png' %} class = 'megaphone'/>
