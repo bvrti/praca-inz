@@ -1,0 +1,2 @@
+pip install pyyaml ua-parser user-agents
+pip install django-user-agents

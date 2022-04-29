@@ -26,14 +26,15 @@
         <ul class = 'navUl'>
             <li class = 'navLi'><a href = '/'>Strona Główna</a></li>
             <li class = 'navLi'><a href = '/report-malfunction'>Zgłoś problem</a></li>
-            <li class = 'navLi'><a href = 'http://130.171.180.99/fis/people/support'>Kontakt</a></li>
             {% if user.is_authenticated %}
-                <li class = 'navLi'><a href = '/reports'>Otwarte awarie</a></li>
-                <li class = 'navLi'><a href = '/reports'>Raporty</a></li>
-                <li class = 'navLi'><a href = '/administration'>Administracja</a></li>
-                <li class = 'navLi'><a href = '/admin'>django-admin</a></li>
-                <li class = 'navLi'><a href = '/logout'>Wyloguj</a></li>
+                    <li class = 'navLi'><a href = '/reports'>Otwarte awarie</a></li>
+                    <li class = 'navLi'><a href = '/reports'>Raporty</a></li>
+                    <li class = 'navLi'><a href = '/administration'>Administracja</a></li>
+                    <li class = 'navLi'><a href = '/admin'>django-admin</a></li>
+                    <li class = 'navLi'><a href = 'http://130.171.180.99/fis/people/support'>Kontakt</a></li>
+                    <li class = 'navLi'><a href = '/logout'>Wyloguj</a></li>
             {% else %}
+                <li class = 'navLi'><a href = 'http://130.171.180.99/fis/people/support'>Kontakt</a></li>
                 <li class = 'navLi'><a href = '/login'>Zaloguj</a></li>
             {% endif %}
         </ul>
@@ -42,7 +43,7 @@
         {% block content %} 
             {% if user.is_authenticated %}
                 <div class = 'main-page-content'>
-                    
+
                 </div>
             {% else %}
                 <div class = 'main-page-content'>
