@@ -6,6 +6,8 @@ from django.contrib.auth.decorators import login_required
 
 def index(request):
     template = loader.get_template('app/index.html')
+    if request.user_agent.is_mobile:
+        return reportMalfunction(request)
     return HttpResponse(template.render({}, request))
 
 @login_required(login_url='/login/')
