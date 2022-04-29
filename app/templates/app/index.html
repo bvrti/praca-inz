@@ -15,6 +15,9 @@
         <div class = 'logoBox'>
             <img src = {% static 'app/img/logo.png' %} class = 'logo'>
         </div>
+        <div class = 'username-box'>
+            <h1 class = 'username'>{% if user.is_authenticated %} Witaj, {{ request.user.first_name }}!{% endif %}</h1>
+        </div>
         <div class = 'headerContent'>
             <h1>Zgłoś problem z maszyną</h1>
         </div>
@@ -37,13 +40,16 @@
     </nav>
     <section>
         {% block content %} 
-        {% if user.is_authenticated %}
+            {% if user.is_authenticated %}
+                <div class = 'main-page-content'>
+                    
+                </div>
             {% else %}
-            <div class = 'main-page-content'>
-                <img src = {% static 'app/img/megaphone.png' %} class = 'megaphone'/>
-                <h2>Witaj w serwisie zgłaszania problemów z maszynami!</h2>
-                <h3><a href='/report-malfunction'>Kliknij tutaj, aby zgłosić problem z maszyną.</a></h3>           
-            </div>
+                <div class = 'main-page-content'>
+                    <img src = {% static 'app/img/megaphone.png' %} class = 'megaphone'/>
+                    <h2>Witaj w serwisie zgłaszania problemów z maszynami!</h2>
+                    <h3><a href='/report-malfunction'>Kliknij tutaj, aby zgłosić problem z maszyną.</a></h3>           
+                </div>
             {% endif %}
         {% endblock %}
     </section>
