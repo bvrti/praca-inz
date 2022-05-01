@@ -12,15 +12,9 @@
     {% else %}
             <form method="post" action="" class = 'report-malfunction-form'>
                 {% csrf_token %}
-                <table>
-                    <label>Zaloguj się:</label>
-                    <tr>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                    </tr>
-                </table>
+                    <label>Zglos awarie maszyny:</label>
+                    <input type="text" name="machine_name" placeholder = 'Nazwa maszyny' class = 'malfunction-name' required>
+                    <textarea name="description" placeholder = 'Opisz problem' class = 'malfunction-description' required></textarea>
                 {% if form.errors %}
                     <style>
                         .login-form input[type="text"], input[type="password"]:last-child {
@@ -28,6 +22,7 @@
                         }
                     </style>
                 {% endif %}
+
                 <input type="submit" value="Prześlij" />
                 <input type="hidden" name="next" value="{{ next }}" />
             </form>

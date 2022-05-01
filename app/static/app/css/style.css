@@ -125,6 +125,16 @@ section {
 .username-box h1 {
     color: #fff;
 }
+
+.malfunction-description {
+    height: 40vh;
+    width: 40vw;
+    margin-bottom: 3vh;
+}
+.malfunction-name {
+    width: 40vw;
+}
+
 @media only screen and (max-width: 500px) {
     header {
         background-color: #0d1b26;

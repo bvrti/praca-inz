@@ -14,3 +14,7 @@ def index(request):
 def reportMalfunction(request):
     template = loader.get_template('app/report-malfunction.html')
     return HttpResponse(template.render({}, request))
+
+def test(request):
+    template = loader.get_template('app/test_qr.html')
+    return HttpResponse(template.render({}, request))
