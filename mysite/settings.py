@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-gc3!(m#d=-efd(1wcn4y_@-z6$p(%%ov+89b80@f0h4c6msiyy
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.176.79', "10.142.11.200"]
+ALLOWED_HOSTS = ['192.168.176.79', "10.142.11.200", "192.168.1.42"]
 
 
 # Application definition
@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_user_agents',
+    "django_extensions",
+    "sslserver",
 ]
 
 MIDDLEWARE = [

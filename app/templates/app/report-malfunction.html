@@ -3,28 +3,19 @@
 {% block title %}Zgłoś awarię{% endblock %}
 {% load static %}
 {% block content %}
-    {% if request.user_agent.is_mobile %}
-        <div class="qr-code-container">
-            <img src = {% static 'app/img/qr-code.png' %} class = 'qr-code-icon'/>
-            <div class="qr-code-text">
-                <p>Kliknij, aby zeskanować kod QR maszyny.</p>
-        </div>
-    {% else %}
-            <form method="post" action="" class = 'report-malfunction-form'>
-                {% csrf_token %}
-                    <label>Zglos awarie maszyny:</label>
-                    <input type="text" name="machine_name" placeholder = 'Nazwa maszyny' class = 'malfunction-name' required>
-                    <textarea name="description" placeholder = 'Opisz problem' class = 'malfunction-description' required></textarea>
-                {% if form.errors %}
-                    <style>
-                        .login-form input[type="text"], input[type="password"]:last-child {
-                            margin-bottom: 0;
-                        }
-                    </style>
-                {% endif %}
-
-                <input type="submit" value="Prześlij" />
-                <input type="hidden" name="next" value="{{ next }}" />
-            </form>
-    {% endif %}
+    <form method="post" action="" class = 'report-malfunction-form'>
+        {% csrf_token %}
+            <label>Zglos awarie maszyny:</label>
+            <input type="text" name="machine_name" placeholder = 'Nazwa maszyny' class = 'malfunction-name' required>
+            <textarea name="description" placeholder = 'Opisz problem' class = 'malfunction-description' required></textarea>
+        {% if form.errors %}
+            <style>
+                .login-form input[type="text"], input[type="password"]:last-child {
+                    margin-bottom: 0;
+                }
+            </style>
+        {% endif %}
+        <input type="submit" value="Prześlij" />
+        <input type="hidden" name="next" value="{{ next }}" />
+    </form>
 {% endblock %}
