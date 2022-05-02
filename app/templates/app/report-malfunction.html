@@ -16,6 +16,12 @@
     </div>
     <script src= {% static "app\js\html5-qrcode.min.js" %}></script>
     <script src= {% static "app\js\report-malfunction-mobile.js" %}></script>
+{% else %}
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var machine_name = document.querySelector('.malfunction-name').focus();
+        });
+    </script>
 {% endif %}
     <form method="post" action="" class = 'report-malfunction-form'>
         {% csrf_token %}
