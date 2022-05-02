@@ -3,6 +3,20 @@
 {% block title %}Zgłoś awarię{% endblock %}
 {% load static %}
 {% block content %}
+{% if request.user_agent.is_mobile %}
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var form = document.querySelector('.report-malfunction-form');
+            form.classList.add('Hidden');
+        });
+    </script>
+    <div class="qr-code-container">
+        <h1>Zeskanuj kod QR</h1>
+        <div id="reader"></div>
+    </div>
+    <script src= {% static "app\js\html5-qrcode.min.js" %}></script>
+    <script src= {% static "app\js\report-malfunction-mobile.js" %}></script>
+{% endif %}
     <form method="post" action="" class = 'report-malfunction-form'>
         {% csrf_token %}
             <label>Zgłoś awarię maszyny:</label>

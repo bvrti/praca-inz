@@ -12,19 +12,31 @@ Html5Qrcode.getCameras().then(devices => {
       },
       (decodedText, decodedResult) => {
         html5QrCode.stop().then((ignore) => {
-          alert(decodedText);
+          hideQR(decodedText);
         }).catch((err) => {
-          //window.location.href = "/report-malfunction";
+          hideQR("");
         });
       },
       (errorMessage) => {
         // window.location.href = "/report-malfunction";
       })
     .catch((err) => {
-      //window.location.href = "/report-malfunction";
+      hideQR("");
     });
   }
 }).catch(err => {
   alert(err);
-  window.location.href = "/report-malfunction";
+  hideQR("");
 });
+
+function hideQR(decodedText) {
+  var form = document.querySelector('.report-malfunction-form');
+  var qrcontainer = document.querySelector('.qr-code-container').style.display = 'none';
+  form.classList.remove('Hidden');
+  var machine_name = document.querySelector('.malfunction-name').value = decodedText;
+  if (decodedText != "" && decodedText != null) {
+    var malfunction_description = document.querySelector('.malfunction-description').focus();
+  } else {
+    var machine_name = document.querySelector('.malfunction-name').focus();
+  }
+}

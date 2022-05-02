@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 def index(request):
     template = loader.get_template('app/index.html')
     if request.user_agent.is_mobile:
-        return reportMalfunctionMobile(request)
+        return reportMalfunction(request)
     return HttpResponse(template.render({}, request))
 
 @login_required(login_url='/login/')
@@ -15,8 +15,8 @@ def reportMalfunction(request):
     template = loader.get_template('app/report-malfunction.html')
     return HttpResponse(template.render({}, request))
 
-@login_required(login_url='/login/')
-def reportMalfunctionMobile(request):
-    template = loader.get_template('app/report-malfunction-mobile.html')
-    return HttpResponse(template.render({}, request))
+# @login_required(login_url='/login/')
+# def reportMalfunctionMobile(request):
+#     template = loader.get_template('app/report-malfunction-mobile.html')
+#     return HttpResponse(template.render({}, request))
 
