@@ -12,7 +12,12 @@ class Setting(models.Model):
             ("Operator", "Can report malfunction"),
         ]
 
+class machine(models.Model):
+    name = models.CharField(max_length=50, unique=True)
+    description = models.TextField()
+    description = models.TextField()
+
 class malfunction(models.Model):
     machine_name = models.CharField(max_length=6)
     description = models.TextField()
-    status = models.CharField(max_length=10)
+    status = models.CharField(max_length=10, default="Pending")

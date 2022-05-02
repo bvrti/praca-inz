@@ -128,14 +128,14 @@ section {
 .Hidden {
     display: none;
 }
-.malfunction-description {
+.report-malfunction-form textarea {
     height: 40vh;
     width: 40vw;
     margin-bottom: 3vh;
     font-size: 20px;
     resize: none;
 }
-.report-malfunction-form input[type="text"], .report-malfunction-form input[type="password"]  {
+.report-malfunction-form input[type="text"], .report-malfunction-form input[type="password"] {
     width: 40vw;
     font-size: 20px;
     height: 3vw;
@@ -241,7 +241,7 @@ section {
         height: 13vw;
         margin: 4vw 0 2vw 0;
     }
-    .malfunction-description {
+    .report-malfunction-form textarea {
         height: 50vh;
         width: 70vw;
         margin-bottom: 3vh;

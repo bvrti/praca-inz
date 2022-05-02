@@ -19,15 +19,16 @@
 {% else %}
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            var machine_name = document.querySelector('.malfunction-name').focus();
+            var machine_name = document.getElementById('id_machine_name').focus();
         });
     </script>
 {% endif %}
-    <form method="post" action="" class = 'report-malfunction-form'>
+    <form method="post" action="{% url 'reportMalfunction' %}" enctype='multipart/form-data' class = 'report-malfunction-form'>
         {% csrf_token %}
             <label>Zgłoś awarię maszyny:</label>
-            <input type="text" name="machine_name" placeholder = 'Nazwa maszyny' class = 'malfunction-name' required>
-            <textarea name="description" placeholder = 'Opisz problem' class = 'malfunction-description' required></textarea>
+            {% comment %} <input type="text" name="machine_name" placeholder = 'Nazwa maszyny' class = 'malfunction-name' required>
+            <textarea name="description" placeholder = 'Opisz problem' class = 'malfunction-description' required></textarea> {% endcomment %}
+            {{form}}
         {% if form.errors %}
             <style>
                 .login-form input[type="text"], input[type="password"]:last-child {
@@ -36,6 +37,5 @@
             </style>
         {% endif %}
         <input type="submit" value="Prześlij" />
-        <input type="hidden" name="next" value="{{ next }}" />
     </form>
 {% endblock %}

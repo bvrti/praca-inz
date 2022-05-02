@@ -33,10 +33,10 @@ function hideQR(decodedText) {
   var form = document.querySelector('.report-malfunction-form');
   var qrcontainer = document.querySelector('.qr-code-container').style.display = 'none';
   form.classList.remove('Hidden');
-  var machine_name = document.querySelector('.malfunction-name').value = decodedText;
+  var machine_name = document.getElementById('id_machine_name').value = decodedText;
   if (decodedText != "" && decodedText != null) {
-    var malfunction_description = document.querySelector('.malfunction-description').focus();
+    var malfunction_description = document.getElementById('id_description').focus();
   } else {
-    var machine_name = document.querySelector('.malfunction-name').focus();
+    var machine_name = document.getElementById('id_machine_name').focus();
   }
 }

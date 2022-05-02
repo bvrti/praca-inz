@@ -1,7 +1,9 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, redirect
+from django.http import HttpResponse, Http404
 from django.template import loader
 from django.contrib.auth.decorators import login_required
+
+from .forms import reportMalfunctionForm
 # Create your views here.
 
 def index(request):
@@ -12,8 +14,14 @@ def index(request):
 
 @login_required(login_url='/login/')
 def reportMalfunction(request):
+    if request.POST:
+        form = reportMalfunctionForm(request.POST)
+        print(request.POST)
+        if form.is_valid():
+            instance = form.save(commit=False)
+            instance.save(using='postgres')
     template = loader.get_template('app/report-malfunction.html')
-    return HttpResponse(template.render({}, request))
+    return HttpResponse(template.render({ 'form' : reportMalfunctionForm }, request))
 
 # @login_required(login_url='/login/')
 # def reportMalfunctionMobile(request):
