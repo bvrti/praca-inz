@@ -11,3 +11,8 @@ class Setting(models.Model):
         permissions = [
             ("Operator", "Can report malfunction"),
         ]
+
+class malfunction(models.Model):
+    machine_name = models.CharField(max_length=6)
+    description = models.TextField()
+    status = models.CharField(max_length=10)
