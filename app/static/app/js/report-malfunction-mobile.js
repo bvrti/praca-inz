@@ -26,5 +26,5 @@ Html5Qrcode.getCameras().then(devices => {
   }
 }).catch(err => {
   alert(err);
-  //window.location.href = "/report-malfunction";
+  window.location.href = "/report-malfunction";
 });

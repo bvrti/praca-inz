@@ -5,7 +5,7 @@
 {% block content %}
     <form method="post" action="" class = 'report-malfunction-form'>
         {% csrf_token %}
-            <label>Zglos awarie maszyny:</label>
+            <label>Zgłoś awarię maszyny:</label>
             <input type="text" name="machine_name" placeholder = 'Nazwa maszyny' class = 'malfunction-name' required>
             <textarea name="description" placeholder = 'Opisz problem' class = 'malfunction-description' required></textarea>
         {% if form.errors %}
