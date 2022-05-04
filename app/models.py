@@ -21,3 +21,4 @@ class malfunction(models.Model):
     machine_name = models.CharField(max_length=6)
     description = models.TextField()
     status = models.CharField(max_length=10, default="Pending")
+    date = models.DateTimeField(auto_now=True)

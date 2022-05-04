@@ -20,9 +20,14 @@ def reportMalfunction(request):
         if form.is_valid():
             instance = form.save(commit=False)
             instance.save(using='postgres')
+            return redirect('reportMalfunctionSuccess')
     template = loader.get_template('app/report-malfunction.html')
     return HttpResponse(template.render({ 'form' : reportMalfunctionForm }, request))
 
+@login_required(login_url='/login/')
+def reportMalfunctionSuccess(request):
+    template = loader.get_template('app/report-malfunction-success.html')
+    return HttpResponse(template.render({}, request))
 # @login_required(login_url='/login/')
 # def reportMalfunctionMobile(request):
 #     template = loader.get_template('app/report-malfunction-mobile.html')
