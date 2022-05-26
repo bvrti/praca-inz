@@ -3,11 +3,32 @@
 {% block title %}Zgłoś awarię{% endblock %}
 {% load static %}
 {% block content %}
-    <form method="post" action="" class = 'report-malfunction-form'>
+{% if request.user_agent.is_mobile %}
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var form = document.querySelector('.report-malfunction-form');
+            form.classList.add('Hidden');
+        });
+    </script>
+    <div class="qr-code-container">
+        <h1>Zeskanuj kod QR</h1>
+        <div id="reader"></div>
+    </div>
+    <script src= {% static "app\js\html5-qrcode.min.js" %}></script>
+    <script src= {% static "app\js\report-malfunction-mobile.js" %}></script>
+{% else %}
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var machine_name = document.getElementById('id_machine_name').focus();
+        });
+    </script>
+{% endif %}
+    <form method="post" action="{% url 'reportMalfunction' %}" enctype='multipart/form-data' class = 'report-malfunction-form'>
         {% csrf_token %}
-            <label>Zglos awarie maszyny:</label>
-            <input type="text" name="machine_name" placeholder = 'Nazwa maszyny' class = 'malfunction-name' required>
-            <textarea name="description" placeholder = 'Opisz problem' class = 'malfunction-description' required></textarea>
+            <label>Zgłoś awarię maszyny:</label>
+            {% comment %} <input type="text" name="machine_name" placeholder = 'Nazwa maszyny' class = 'malfunction-name' required>
+            <textarea name="description" placeholder = 'Opisz problem' class = 'malfunction-description' required></textarea> {% endcomment %}
+            {{form}}
         {% if form.errors %}
             <style>
                 .login-form input[type="text"], input[type="password"]:last-child {
@@ -16,6 +37,5 @@
             </style>
         {% endif %}
         <input type="submit" value="Prześlij" />
-        <input type="hidden" name="next" value="{{ next }}" />
     </form>
 {% endblock %}
