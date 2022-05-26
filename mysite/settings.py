@@ -32,7 +32,7 @@ SECRET_KEY = 'django-insecure-gc3!(m#d=-efd(1wcn4y_@-z6$p(%%ov+89b80@f0h4c6msiyy
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-CORS_ORIGIN_ALLOW_ALL = True
+CSRF_ORIGIN_ALLOW_ALL = True
 # CSRF_TRUSTED_ORIGINS = ['*']
 
 # Application definition
