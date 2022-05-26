@@ -19,7 +19,7 @@ def reportMalfunction(request):
         print(request.POST)
         if form.is_valid():
             instance = form.save(commit=False)
-            instance.save(using='postgres')
+            instance.save(using='default')
             return redirect('reportMalfunctionSuccess')
     template = loader.get_template('app/report-malfunction.html')
     return HttpResponse(template.render({ 'form' : reportMalfunctionForm }, request))
