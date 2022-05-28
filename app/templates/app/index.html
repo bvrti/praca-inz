@@ -5,6 +5,15 @@
     <title>{% block title %}App{% endblock %}</title>
     <meta charset = 'utf-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-0M4604NMLK"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-0M4604NMLK');
+        </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'app/css/style.css' %}">
     <link rel="icon" type="image/x-icon" href="{% static 'app/img/favicon.png' %}">
