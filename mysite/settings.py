@@ -136,7 +136,7 @@ LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'Europe/Warsaw'
 
-DATETIME_FORMAT = 'H:i d-m-Y'
+DATETIME_FORMAT = 'H:i d.m.Y'
 
 USE_I18N = True
 

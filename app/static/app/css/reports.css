@@ -14,6 +14,9 @@
 #table-reports {
     text-align: center;
 }
+.sorting {
+    text-align: center !important;
+}
 #table-reports tr:nth-child(even) {
   background-color: #E0E0E0;
 }
@@ -22,4 +25,17 @@
 }
 #table-reports tr:nth-child(odd):hover {
     background-color: #B0B0B0;
+}
+
+.bad-row:nth-child(even) {
+    background-color: #ffc0cb !important;
+}
+.bad-row:nth-child(odd) {
+    background-color: #ffb6c1 !important;
+}
+.bad-row:nth-child(even):hover {
+    background-color: #ffaeb9 !important;
+}
+.bad-row:nth-child(odd):hover {
+    background-color: #ffa2b5 !important;
 }
