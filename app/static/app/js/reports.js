@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
             { "width": "10%" },
             { "width": "60%" },
             null,
-            { "width": "15%" },
-          ]
+            { "width": "15%"},
+          ],
     });
 });
