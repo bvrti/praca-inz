@@ -91,12 +91,20 @@ DATABASES = {
     #     'ENGINE': 'django.db.backends.sqlite3',
     #     'NAME': BASE_DIR / 'db.sqlite3',
     # },
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    #     'NAME': os.environ.get('DBNAME'),
+    #     'USER': os.environ.get('DBUSER'),
+    #     'PASSWORD': os.environ.get('DBPASS'),
+    #     'HOST': os.environ.get('DBHOST'),
+    #     'POST': '',
+    # }
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get('DBNAME'),
-        'USER': os.environ.get('DBUSER'),
-        'PASSWORD': os.environ.get('DBPASS'),
-        'HOST': os.environ.get('DBHOST'),
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'VUK6hg755bj',
+        'HOST': 'postgres-bw.postgres.database.azure.com',
         'POST': '',
     }
 }

@@ -1,4 +1,5 @@
 from django.db import models
+
 # Create your models here.
 
 class Setting(models.Model):
@@ -21,4 +22,4 @@ class malfunction(models.Model):
     machine_name = models.CharField(max_length=6)
     description = models.TextField()
     status = models.CharField(max_length=10, default="Pending")
-    date = models.DateTimeField(auto_now=True)
+    date = models.DateTimeField(auto_now_add=True, blank=True)

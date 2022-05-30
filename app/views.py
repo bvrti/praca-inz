@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse, Http404
 from django.template import loader
 from django.contrib.auth.decorators import login_required
+from django.db import connection
 
 from .forms import reportMalfunctionForm
 # Create your views here.
@@ -28,8 +29,14 @@ def reportMalfunction(request):
 def reportMalfunctionSuccess(request):
     template = loader.get_template('app/report-malfunction-success.html')
     return HttpResponse(template.render({}, request))
-# @login_required(login_url='/login/')
-# def reportMalfunctionMobile(request):
-#     template = loader.get_template('app/report-malfunction-mobile.html')
-#     return HttpResponse(template.render({}, request))
 
+@login_required(login_url='/login/')
+def reportsopenedmalfunctions(request):
+    template = loader.get_template('app/reports-opened-malfunctions.html')
+    cursor = connection.cursor()
+    try:
+        cursor.execute("SELECT * FROM app_malfunction WHERE status != 'Closed'")
+        malfunctions = cursor.fetchall()
+    finally:
+        cursor.close()
+    return HttpResponse(template.render({ 'malfunctions' : malfunctions }, request))

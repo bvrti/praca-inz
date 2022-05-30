@@ -1,0 +1,40 @@
+{% extends "app/index.html" %}
+    {% block head %}
+        {% load static %}
+        {% comment %} DataTables {% endcomment %}
+        <link rel="stylesheet" type="text/css" href="{% static 'app/DataTables/datatables.min.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'app/css/reports.css' %}"/>
+        <script type="text/javascript" src="{% static 'app/js/reports.js' %}"></script>
+        <script type="text/javascript" src="{% static 'app/js/jquery-3.6.0.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'app/js/moment-with-locales.js' %}"></script>
+        <script type="text/javascript" src="{% static 'app/DataTables/datatables.min.js' %}"></script>
+    {% endblock %}
+
+    {% block title%}Raporty{% endblock %}
+    
+    {% block content %}
+    <div class = 'content'>
+        <div class = 'table-div'>
+            <table id="table-reports">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nazwa</th>
+                        <th>Opis</th>
+                        <th>Status</th>
+                        <th>Data</th>
+                    </tr>
+                </thead>
+                <tbody>   
+                    {% for obj in malfunctions %}
+                        <tr>
+                            {% for obj2 in obj %}
+                                <td>{{obj2}}</td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {% endblock %}
