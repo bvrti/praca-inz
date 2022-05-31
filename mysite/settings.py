@@ -32,7 +32,7 @@ SECRET_KEY = 'django-insecure-gc3!(m#d=-efd(1wcn4y_@-z6$p(%%ov+89b80@f0h4c6msiyy
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS = ['https://django-app-01.azurewebsites.net', "https://nie-dziala.xyz"]
+CSRF_TRUSTED_ORIGINS = ["https://nie-dziala.xyz", " https://dev.nie-dziala.xyz"]
 
 # Application definition
 
