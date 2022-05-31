@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     $('#table-reports').DataTable( {
         searching: true,
         paging: true,
-        "lengthMenu": [ [-1, 10, 25, 50], ["All", 10, 25, 50] ],
+        "lengthMenu": [ [20, -1] , [20, "All"]],
         info: true,
         "columns": [
             { "width": "5%" },
