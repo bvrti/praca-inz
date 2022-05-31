@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
         searching: true,
         paging: true,
         "lengthMenu": [ [-1, 10, 25, 50], ["All", 10, 25, 50] ],
-        info: false,
+        info: true,
         "columns": [
             { "width": "5%" },
             { "width": "10%" },

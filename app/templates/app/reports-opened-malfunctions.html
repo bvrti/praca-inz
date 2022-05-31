@@ -13,8 +13,8 @@
     {% block title%}Raporty{% endblock %}
     
     {% block content %}
-    <div class = 'content'>
-        <div class = 'table-div'>
+
+    <div class="table-box">
             <table id="table-reports">
                 <thead>
                     <tr>
@@ -34,8 +34,16 @@
                             {% endfor %}
                         </tr>
                     {% endfor %}
+                    {% for obj in malfunctions %}
+                        <tr id="{{obj.0}}">
+                            {% for obj2 in obj %}
+                                <td>{{obj2}}</td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                    
                 </tbody>
             </table>
         </div>
-    </div>
+  
     {% endblock %}

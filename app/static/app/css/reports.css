@@ -1,44 +1,40 @@
-.content {
-    padding-top: 2vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+section {
+    display: block;
 }
-.table-div {
-    width: 90%;
-    border-collapse: collapse;
-    border-spacing: 0;
-    font-size: 12px;
+.table-box {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: 12px;
 }
 #table-reports {
-    text-align: center;
+  text-align: center;
 }
 .sorting {
-    text-align: center !important;
+  text-align: center !important;
 }
 #table-reports tr {
-    cursor: pointer;
+  cursor: pointer;
 }
 #table-reports tr:nth-child(even) {
-  background-color: #E0E0E0;
+  background-color: #e0e0e0;
 }
 #table-reports tr:nth-child(even):hover {
-    background-color: #C0C0C0;
+  background-color: #c0c0c0;
 }
 #table-reports tr:nth-child(odd):hover {
-    background-color: #B0B0B0;
+  background-color: #b0b0b0;
 }
 
 .bad-row:nth-child(even) {
-    background-color: #ffc0cb !important;
+  background-color: #ffc0cb !important;
 }
 .bad-row:nth-child(odd) {
-    background-color: #ffb6c1 !important;
+  background-color: #ffb6c1 !important;
 }
 .bad-row:nth-child(even):hover {
-    background-color: #ffaeb9 !important;
+  background-color: #ffaeb9 !important;
 }
 .bad-row:nth-child(odd):hover {
-    background-color: #ffa2b5 !important;
+  background-color: #ffa2b5 !important;
 }
