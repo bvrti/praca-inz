@@ -24,4 +24,13 @@ document.addEventListener("DOMContentLoaded", function() {
             }
           }
     });
+
+    const cells = document.querySelectorAll('tr');
+    for (var i = 0; i < cells.length; i++) {
+        cells[i].addEventListener('click', function (e) {
+          row = e.path[1];
+          console.log("Row id: " + row.id);
+          window.location.href = "/view-malfunction/" + row.id;
+        });
+      }
 });

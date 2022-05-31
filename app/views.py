@@ -40,3 +40,14 @@ def reportsopenedmalfunctions(request):
     finally:
         cursor.close()
     return HttpResponse(template.render({ 'malfunctions' : malfunctions }, request))
+
+@login_required(login_url='/login/')
+def viewMalfunction(request, id):
+    template = loader.get_template('app/viewMalfunction.html')
+    cursor = connection.cursor()
+    try:
+        cursor.execute("SELECT * FROM app_malfunction WHERE id = %s;", [id])
+        malfunction = cursor.fetchall()
+    finally:
+        cursor.close()
+    return HttpResponse(template.render({'malfunction' : malfunction }, request))

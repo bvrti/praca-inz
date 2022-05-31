@@ -28,7 +28,7 @@
                 </thead>
                 <tbody>   
                     {% for obj in malfunctions %}
-                        <tr>
+                        <tr id="{{obj.0}}">
                             {% for obj2 in obj %}
                                 <td>{{obj2}}</td>
                             {% endfor %}

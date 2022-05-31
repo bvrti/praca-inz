@@ -17,6 +17,9 @@
 .sorting {
     text-align: center !important;
 }
+#table-reports tr {
+    cursor: pointer;
+}
 #table-reports tr:nth-child(even) {
   background-color: #E0E0E0;
 }
