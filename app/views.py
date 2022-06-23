@@ -7,13 +7,16 @@ from django.db import connection
 from .forms import reportMalfunctionForm
 # Create your views here.
 
+#! Template Method
 def index(request):
     template = loader.get_template('app/index.html')
     if request.user_agent.is_mobile:
         return reportMalfunction(request)
     return HttpResponse(template.render({}, request))
 
+#! Prototype 
 @login_required(login_url='/login/')
+#! Prototype 
 def reportMalfunction(request):
     if request.POST:
         form = reportMalfunctionForm(request.POST)
@@ -40,6 +43,10 @@ def reportsopenedmalfunctions(request):
     finally:
         cursor.close()
     return HttpResponse(template.render({ 'malfunctions' : malfunctions }, request))
+
+@login_required(login_url='/login/')
+def reports(request):
+    return redirect('')
 
 @login_required(login_url='/login/')
 def viewMalfunction(request, id):

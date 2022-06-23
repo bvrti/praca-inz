@@ -1,0 +1,33 @@
+1. Singletone Design Pattern
+    plik: app/models.py
+
+    W tym przypadku klasa PlantName przechowuje informacje o instacji, które nie mogą ulec zmianie
+
+2. Prototype Design Pattern
+    plik: app/views.py, 
+          app/templates/registraton/login.html
+
+    Logowanie ogranicza dostęp użytkownikom bez uprawnień
+
+3. Facade Design Pattern
+    plik: app/templates/*
+
+    Pliki .html są tym co widzi użytkownik, umożliwiając tym przyjazną komunikację z backendem
+
+4. Template Method Design Pattern
+    plik: app/views.py, 
+          app/templates/*
+
+    Pliki .html służą jako szablon, który wyświetla różne informacje, w zależności od  tego, jak odpowie backend (np. index.html zmienia zawartość po zalogowaniu)
+
+
+Działającą aplikację można zobaczyć pod linkiem:
+https://dev.nie-dziala.xyz
+User: Admin
+Hasło: zaq1@WSX
+
+Osoby uczestniczące w zindetyfikowaniu i/lub wdrożeniu wzorców projektowych:
+1. Bartosz Strzemieczny 11224
+2. Patryk Karczewski    10826
+3. Mirosław Widlarz     11924
+4. Sebastian Kłoszewski 10831
